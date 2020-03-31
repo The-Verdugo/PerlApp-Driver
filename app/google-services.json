@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "655163858448",
+    "firebase_url": "https://perlapp-25536.firebaseio.com",
+    "project_id": "perlapp-25536",
+    "storage_bucket": "perlapp-25536.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655163858448:android:3d356a8dcb32ca6557f495",
+        "android_client_info": {
+          "package_name": "com.example.perlappdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655163858448-94fipu68u6i5vqg6fqqiq65u5h8jpf2v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.perlappdriver",
+            "certificate_hash": "1238c63825f0475cc435c5b79bc7e3437771b838"
+          }
+        },
+        {
+          "client_id": "655163858448-5fd7dhqlgph3csfacnfsu7f3kl9kd91g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaTrXLPHyFwPDXC8Y3r3ANHAUFAu7uv0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655163858448-5fd7dhqlgph3csfacnfsu7f3kl9kd91g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

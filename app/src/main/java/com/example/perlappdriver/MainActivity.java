@@ -38,9 +38,6 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if(user!=null){
-                    String user_id=mAuth.getCurrentUser().getUid();
-                    DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Chofer").child(user_id);
-                    current_user_db.setValue(true);
                     Intent intent = new Intent(MainActivity.this,Mapa.class);
                     startActivity(intent);
                     finish();

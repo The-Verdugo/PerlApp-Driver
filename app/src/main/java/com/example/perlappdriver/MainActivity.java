@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtCorreo,txtPass;
     private Button btnLogin;
     private FirebaseAuth mAuth;
+    String dato;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     @SuppressLint("WrongViewCast")
     @Override
@@ -38,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if(user!=null){
-                    Intent intent = new Intent(MainActivity.this,Mapa.class);
+                    dato=user.getUid();
+                    Log.d("valor",dato);
+                    Intent intent = new Intent(getApplicationContext(),detalle.class);
+                    intent.putExtra("id",dato);
                     startActivity(intent);
                     finish();
                     return;

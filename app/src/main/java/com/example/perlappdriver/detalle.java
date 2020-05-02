@@ -124,8 +124,8 @@ List<String> camionobt =  new ArrayList<String>();
         StringRequest stringRequest= new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if(response.isEmpty()) {
-                    Log.d("valorresponse", response);
+                Log.d("valorresponse", response);
+                if(response!="vacio") {
                     Intent intent = new Intent(getApplicationContext(), Mapa.class);
                     startActivity(intent);
                     finish();

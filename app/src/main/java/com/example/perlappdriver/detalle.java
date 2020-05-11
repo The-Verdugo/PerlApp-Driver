@@ -19,6 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,8 +54,10 @@ List<String> camionobt =  new ArrayList<String>();
                 valorRuta=valorRuta+1;
                 valorCamion=spinnerCamion.getSelectedItemPosition();
                 valorCamion=valorCamion+1;
-                String idChofer=getIntent().getStringExtra("id");
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String  idChofer=user.getUid();
                 registrarRuta("http://perlapp.laviveshop.com/app/consultarrutas.php",idChofer,valorRuta,valorCamion);
+
             }
         });
     }
@@ -124,16 +128,11 @@ List<String> camionobt =  new ArrayList<String>();
         StringRequest stringRequest= new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.d("valorresponse", response);
-                if(response!="vacio") {
+                Log.d("valorstring",response);
                     Intent intent = new Intent(getApplicationContext(), Mapa.class);
                     startActivity(intent);
                     finish();
-                }else
-                    {
-                        Toast.makeText(getApplicationContext(),"No puedes registrar una ruta sino cierras la anterior",Toast.LENGTH_SHORT).show();
-                    }
-            }
+                }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {

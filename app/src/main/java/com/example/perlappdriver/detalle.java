@@ -43,7 +43,7 @@ List<String> camionobt =  new ArrayList<String>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
         spinnerruta=(Spinner) findViewById(R.id.ruta);
-        registrar=(Button) findViewById(R.id.registrar);
+        registrar=(Button) findViewById(R.id.registrar );
         spinnerCamion=(Spinner) findViewById(R.id.spinner2);
         cargarrutas("http://perlapp.laviveshop.com/app/rutas.php");
         cargarcamiones("http://perlapp.laviveshop.com/app/camion.php");
@@ -129,10 +129,18 @@ List<String> camionobt =  new ArrayList<String>();
             @Override
             public void onResponse(String response) {
                 Log.d("valorstring",response);
-                    Intent intent = new Intent(getApplicationContext(), Mapa.class);
-                    startActivity(intent);
-                    finish();
-                }
+                String varuta = "1";
+                Toast.makeText( getBaseContext(), response, Toast.LENGTH_SHORT ).show();
+               if(response !="0") {
+
+                    Toast.makeText( getBaseContext(), "La ruta ya ha sido añadida previamente", Toast.LENGTH_SHORT ).show();
+
+                } else {
+                    Toast.makeText( getBaseContext(), "Ruta añadida con éxito", Toast.LENGTH_SHORT ).show();
+                   // Intent intent = new Intent(getApplicationContext(), Mapa.class);
+                    //startActivity(intent);
+                    //finish();
+                }}
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {

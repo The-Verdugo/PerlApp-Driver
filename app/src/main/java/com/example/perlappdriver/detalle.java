@@ -129,18 +129,18 @@ List<String> camionobt =  new ArrayList<String>();
             @Override
             public void onResponse(String response) {
                 Log.d("valorstring",response);
-                String varuta = "1";
-                Toast.makeText( getBaseContext(), response, Toast.LENGTH_SHORT ).show();
-               if(response !="0") {
+                //String varuta = "1";
+                //Toast.makeText( getBaseContext(), response, Toast.LENGTH_SHORT ).show();
+               //if(response.equals("1")) {
+                   Toast.makeText( getBaseContext(), "Ruta añadida con éxito", Toast.LENGTH_SHORT ).show();
+                   Intent intent = new Intent(getApplicationContext(), Mapa.class);
+                   startActivity(intent);
+                   finish();
 
-                    Toast.makeText( getBaseContext(), "La ruta ya ha sido añadida previamente", Toast.LENGTH_SHORT ).show();
 
-                } else {
-                    Toast.makeText( getBaseContext(), "Ruta añadida con éxito", Toast.LENGTH_SHORT ).show();
-                   // Intent intent = new Intent(getApplicationContext(), Mapa.class);
-                    //startActivity(intent);
-                    //finish();
-                }}
+                //} else {
+                   /*Toast.makeText( getBaseContext(), "La ruta ya ha sido añadida previamente", Toast.LENGTH_SHORT ).show();
+                }*/}
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {

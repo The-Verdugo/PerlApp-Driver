@@ -20,14 +20,24 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
     </LinearLayout>
+
     <Button
         android:id="@+id/btnruta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Finalizar Ruta" />
+        android:background="#009688"
+        android:fontFamily="sans-serif-black"
+        android:text="Finalizar Ruta"
+        android:textColor="#FFFF"
+        android:textSize="24sp" />
+
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cerrar Sesion" />
+        android:layout_height="64dp"
+        android:backgroundTint="#009688"
+        android:fontFamily="sans-serif-black"
+        android:text="Cerrar Sesión"
+        android:textColor="#FFFF"
+        android:textSize="24sp" />
 </LinearLayout>
